@@ -4,7 +4,7 @@ import Image from 'next/image';
 import classes from './meal-item.module.scss';
 import {Meal} from "@/types/meal";
 
-export default function MealItem({ title, slug, image, summary, creator }: Meal) {
+export default function MealItem({ title, id, image, summary, creator }: Meal) {
 	return (
 		<article className={classes.meal}>
 			<header>
@@ -19,7 +19,7 @@ export default function MealItem({ title, slug, image, summary, creator }: Meal)
 			<div className={classes.content}>
 				<p className={classes.summary}>{summary}</p>
 				<div className={classes.actions}>
-					<Link href={`/meals/${slug}`}>View Details</Link>
+					<Link href={`/meals/${id}`}>View Details</Link>
 				</div>
 			</div>
 		</article>
