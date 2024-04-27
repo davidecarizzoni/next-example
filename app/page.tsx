@@ -1,6 +1,6 @@
 import classes from './page.module.scss';
 import ImageSlideshow from "@/components/images/image-slideshow";
-import NavLink from "@/components/main-header/nav-link";
+import NavLink from "@/components/nav-link/nav-link";
 
 export default function Home() {
   
