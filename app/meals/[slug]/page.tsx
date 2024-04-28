@@ -11,7 +11,6 @@ type Props = {
 
 export default async function MealsDetailPage({ params : { slug }}: Props) {
 	const meal = await getMeal(slug)
-	console.log(meal)
 	
 	if(!meal) {
 		notFound()
