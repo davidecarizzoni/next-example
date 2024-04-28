@@ -35,7 +35,7 @@ export default function ImagePicker({ label, name }: ImagePickerProps) {
 				<div className={classes.preview}>
 					{pickedImage ? <Image fill src={pickedImage} alt={'Picked Image'}/> : 'No image picked'}
 				</div>
-				<input onChange={handleImageChange} ref={inputRef} className={classes.input} type={'file'} id={'image'} accept={'image/*'} name={name}/>
+				<input onChange={handleImageChange} ref={inputRef} className={classes.input} type={'file'} id={name} accept={'image/*'} name={name}/>
 				<button onClick={showPicker} className={classes.button} type={'button'}>
 					Pick an image
 				</button>

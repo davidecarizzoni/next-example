@@ -1,9 +1,10 @@
 "use server"
 
-import {Meal} from "@/types/meal";
+import {Meal, MealBody} from "@/types/meal";
+import {saveMeal} from "@/lib/meals";
 
 export async function shareMeal (formData: any) {
-	const meal: Omit<Meal, 'id' | 'slug'> = {
+	const meal: MealBody = {
 		title: formData.get('title'),
 		summary: formData.get('summary'),
 		instructions: formData.get('instructions'),
@@ -11,5 +12,5 @@ export async function shareMeal (formData: any) {
 		creator: formData.get('name'),
 		creator_email: formData.get('email')
 	}
-	console.log(meal)
+	return await saveMeal(meal)
 }

@@ -1,5 +1,5 @@
 export interface Meal {
-	id: string
+	id?: string
 	title: string
 	slug: string
 	image: string
@@ -7,4 +7,14 @@ export interface Meal {
 	creator: string
 	creator_email: string
 	instructions: string
+}
+
+
+export interface MealBody {
+	title:  string
+	summary: string
+	instructions: string
+	image: File
+	creator: string
+	creator_email: string
 }
