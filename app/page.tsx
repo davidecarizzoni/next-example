@@ -2,8 +2,12 @@ import classes from './page.module.scss';
 import ImageSlideshow from "@/components/images/image-slideshow";
 import NavLink from "@/components/nav-link/nav-link";
 
+export const metadata = {
+  title: 'NextLevel Food',
+  description: 'NextLevel Food is a platform for foodies to share their favorite recipes with the world. It\'s a place to discover new dishes, and to connect with other food lovers.'
+}
+
 export default function Home() {
-  
   return (
     <>
       <header className={classes.header}>

@@ -9,6 +9,19 @@ type Props = {
 	}
 }
 
+export async function generateMetadata({params: { slug }}: Props) {
+	const meal = await getMeal(slug)
+	
+	if(!meal) {
+		notFound()
+	}
+	
+	return {
+		title: meal.title,
+		description: meal.summary
+	}
+}
+
 export default async function MealsDetailPage({ params : { slug }}: Props) {
 	const meal = await getMeal(slug)
 	
