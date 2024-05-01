@@ -32,21 +32,20 @@ export async function saveMeal(mealBody: MealBody): Promise<Meal> {
   const slug = slugify(mealBody.title, { lower: true })
   const instructions = xss(mealBody.instructions)
   const extension = mealBody.image.name.split('.').pop()
-  const fileName = `${slug}.${extension}`
+  // const fileName = `${slug}.${extension}`
   
-  const imageUrl = URL.createObjectURL(mealBody.image)
+  // const imageUrl = URL.createObjectURL(mealBody.image)
   
   // save image file to public folder
-  fs.writeFileSync(`public/images/${fileName}`, imageUrl)
+  // fs.writeFileSync(`public/images/${fileName}`, imageUrl)
   
   const meal: Meal = {
     ...mealBody,
     slug,
     instructions,
-    image: fileName
+    image: '/images/curry.jpg'
   }
   
-  console.log(meal)
   
   return new Promise((resolve, reject) => {
     db.prepare(`

@@ -2,6 +2,7 @@
 
 import {Meal, MealBody} from "@/types/meal";
 import {saveMeal} from "@/lib/meals";
+import {redirect} from "next/navigation";
 
 export async function shareMeal (formData: any) {
 	const meal: MealBody = {
@@ -12,5 +13,6 @@ export async function shareMeal (formData: any) {
 		creator: formData.get('name'),
 		creator_email: formData.get('email')
 	}
-	return await saveMeal(meal)
+	await saveMeal(meal)
+	redirect('/meals')
 }
